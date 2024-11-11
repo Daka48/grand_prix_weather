@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Grand Prix Weather</title>
+    <style>
+        /* 기본 스타일 */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* 헤더 스타일 */
+        header {
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* 컨테이너와 위치 스타일 */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .location {
+            width: 9%; /* 한 행에 12개씩 배치 */
+            height: 800px;
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.5s;
+            display: inline-block;
+        }
+        .location:hover {
+            transform: scale(1.3);
+        }
+        .location-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* 텍스트를 중앙에 위치 */
+            color: white;
+            background: rgba(0, 0, 0, 0.7); /* 이미지 배경을 어둡게 처리 */
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            opacity: 0; /* 기본 상태에서는 숨김 */
+            transition: opacity 0.3s; /* 호버 시 페이드 인 효과 */
+        }
+        .location:hover .location-text {
+            opacity: 1; /* 호버 시 텍스트가 나타남 */
+        }
+    </style>
+</head>
+<body>
+<header>
+    F1 Grand Prix Weather
+</header>
+<div class="container">
+    <div class="location" id="place15" data-lat="52.387604" data-lon="4.545037" style="background-image: url('NT.jpg');">
+        <div class="location-text">NETHERLANDS Grand Prix</div>
+    </div>
+    <div class="location" id="place16" data-lat="45.616387" data-lon="9.281057" style="background-image: url('IMG_0709.jpg');">
+        <div class="location-text">ITALY Grand Prix</div>
+    </div>
+    <div class="location" id="place17" data-lat="40.37275" data-lon="49.85323" style="background-image: url('IMG_0714.jpg');">
+        <div class="location-text">AZERBAIJAN Grand Prix</div>
+    </div>
+    <div class="location" id="place18" data-lat="1.29126" data-lon="103.86383" style="background-image: url('IMG_0718.jpg');">
+        <div class="location-text">SINGAPORE Grand Prix</div>
+    </div>
+    <div class="location" id="place19" data-lat="30.13263" data-lon="-97.64067" style="background-image: url('IMG_0723.jpg');">
+        <div class="location-text">USA Grand Prix</div>
+    </div>
+    <div class="location" id="place20" data-lat="19.40560" data-lon="-99.09287" style="background-image: url('IMG_0730.jpg');">
+        <div class="location-text">MEXICO Grand Prix</div>
+    </div>
+    <div class="location" id="place21" data-lat="-23.70466" data-lon="-46.69925" style="background-image: url('IMG_0733.jpg');">
+        <div class="location-text">BRAZIL Grand Prix</div>
+    </div>
+    <div class="location" id="place22" data-lat="36.10998" data-lon="-115.16107" style="background-image: url('IMG_0721.jpg');">
+        <div class="location-text">LAS VEGAS Grand Prix</div>
+    </div>
+    <div class="location" id="place23" data-lat="25.48862" data-lon="51.45050" style="background-image: url('IMG_0722.jpg');">
+        <div class="location-text">QATAR Grand Prix</div>
+    </div>
+    <div class="location" id="place24" data-lat="24.47010" data-lon="54.60628" style="background-image: url('monaco.jpg');">
+        <div class="location-text">ABU DHABI Grand Prix</div>
+    </div>
+
+</div>
+
+<script src="weather.js"></script>
+</body>
+</html>
